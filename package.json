@@ -1,0 +1,68 @@
+{
+  "name": "ledger-test",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "./",
+  "main": "./public/electron.js",
+  "build": {
+    "appId": "com.firmachain.wallet",
+    "files": [
+      "public/**/*",
+      "build/**/*",
+      "node_modules/**/*"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    }
+  },
+  "dependencies": {
+    "@firmachain/firma-js": "^0.2.19",
+    "@firmachain/firma-js-ledger": "^0.0.4",
+    "@ledgerhq/hw-transport-node-hid": "^6.20.0",
+    "@ledgerhq/hw-transport-node-hid-singleton": "^6.11.2",
+    "@ledgerhq/hw-transport-webhid": "^6.20.0",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "@types/jest": "^26.0.15",
+    "@types/node": "^12.0.0",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "4.0.3",
+    "typescript": "^4.1.2",
+    "web-vitals": "^1.0.1"
+  },
+  "devDependencies": {
+    "concurrently": "^6.2.1",
+    "cross-env": "^7.0.3",
+    "electron": "^14.0.1",
+    "electron-builder": "^22.11.7",
+    "wait-on": "^6.0.0"
+  },
+  "scripts": {
+    "start": "concurrently \"npm run react:start\" \"npm run electron:start\"",
+    "react:start": "react-scripts start",
+    "react:build": "react-scripts build",
+    "electron:start": "wait-on http://localhost:3000 && electron ."
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

@@ -16,8 +16,8 @@
     }
   },
   "dependencies": {
-    "@firmachain/firma-js": "^0.2.19",
-    "@firmachain/firma-js-ledger": "^0.0.4",
+    "@firmachain/firma-js": "0.2.45",
+    "@firmachain/firma-js-ledger": "0.0.8",
     "@ledgerhq/hw-transport-node-hid": "^6.20.0",
     "@ledgerhq/hw-transport-node-hid-singleton": "^6.11.2",
     "@ledgerhq/hw-transport-webhid": "^6.20.0",

@@ -54,8 +54,12 @@ function App() {
 
     const amount = 1;
 
-    var result1 = await firma.Bank.send(wallet, "firma1epg9kx7nqz32dykj23p6jreqfh5x0wdy5a43qc", amount);
+    try {
+      var result1 = await firma.Bank.send(wallet, "firma1epg9kx7nqz32dykj23p6jreqfh5x0wdy5a43qc", amount);
     console.log(result1);
+    } catch (error) {
+      console.log("error!!!!");
+    }
   };
 
   let webLedgerWallet = new FirmaWebLedgerWallet(TransportHID);
@@ -70,13 +74,19 @@ function App() {
   };
 
   const send_Send = async () => {
-    const firma = new FirmaSDK(FirmaConfig.TestNetConfig);
+
+    try {
+      const firma = new FirmaSDK(FirmaConfig.TestNetConfig);
     const wallet = await firma.Wallet.initFromLedger(webLedgerWallet);
 
     const amount = 1;
 
     var result1 = await firma.Bank.send(wallet, "firma1epg9kx7nqz32dykj23p6jreqfh5x0wdy5a43qc", amount);
     console.log(result1);
+      
+    } catch (error) {
+      console.log("error!!!!");
+    }
   };
 
   return (
